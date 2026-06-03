@@ -4,6 +4,8 @@
  */
 package sistemagerenciamentopedidos.repository;
 
+import sistemagerenciamentopedidos.model.Cliente;
+import sistemagerenciamentopedidos.util.ArquivoUtil;
 /**
  *
  * @author ueg
