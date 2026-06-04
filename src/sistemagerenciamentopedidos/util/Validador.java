@@ -4,10 +4,21 @@
  */
 package sistemagerenciamentopedidos.util;
 
-/**
- *
- * @author ueg
- */
 public class Validador {
-    
+
+    public static boolean campoObrigatorio(String texto) {
+        return texto != null && !texto.trim().isEmpty();
+    }
+
+    public static boolean idValido(int id) {
+        return id > 0;
+    }
+
+    public static boolean valorNaoNegativo(double valor) {
+        return valor >= 0;
+    }
+
+    public static boolean quantidadeItensValida(int quantidade) {
+        return quantidade > 0;
+    }
 }
