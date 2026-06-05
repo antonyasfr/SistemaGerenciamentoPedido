@@ -54,7 +54,7 @@ public class ClienteRepository {
         List<Cliente> clientes = listar();
         for (Cliente c : clientes) {
             if (c.getId_cliente() == cliente.getId_cliente()) {
-                throw new IOException("Erro: Já existe um cliente com o ID " + cliente.getId_cliente());
+                throw new IOException("Erro: Ja existe um cliente com o ID " + cliente.getId_cliente());
             }
         }
         clientes.add(cliente);
@@ -74,7 +74,7 @@ public class ClienteRepository {
         }
 
         if (!encontrado) {
-            throw new IOException("Cliente com ID " + cliente.getId_cliente() + " não encontrado.");
+            throw new IOException("Cliente com ID " + cliente.getId_cliente() + " nao encontrado.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(clientes), ARQUIVO_CLIENTES);
@@ -85,7 +85,7 @@ public class ClienteRepository {
         boolean removido = clientes.removeIf(c -> c.getId_cliente() == id);
 
         if (!removido) {
-            throw new IOException("Cliente com ID " + id + " não encontrado para exclusão.");
+            throw new IOException("Cliente com ID " + id + " nao encontrado para exclusao.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(clientes), ARQUIVO_CLIENTES);

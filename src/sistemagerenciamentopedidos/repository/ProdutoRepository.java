@@ -63,7 +63,7 @@ public class ProdutoRepository {
         // Regra de negócio: impede Código duplicado (RF06)
         for (Produto p : produtos) {
             if (p.getCod_produto() == produto.getCod_produto()) {
-                throw new IOException("Erro: Já existe um produto com o Código " + produto.getCod_produto());
+                throw new IOException("Erro: Ja existe um produto com o Codigo " + produto.getCod_produto());
             }
         }
         produtos.add(produto);
@@ -86,7 +86,7 @@ public class ProdutoRepository {
         }
 
         if (!encontrado) {
-            throw new IOException("Produto com Código " + produto.getCod_produto() + " não encontrado.");
+            throw new IOException("Produto com Codigo " + produto.getCod_produto() + " nao encontrado.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(produtos), ARQUIVO_PRODUTOS);
@@ -98,7 +98,7 @@ public class ProdutoRepository {
         boolean removido = produtos.removeIf(p -> p.getCod_produto() == cod);
 
         if (!removido) {
-            throw new IOException("Produto com Código " + cod + " não encontrado para exclusão.");
+            throw new IOException("Produto com Codigo " + cod + " nao encontrado para exclusao.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(produtos), ARQUIVO_PRODUTOS);

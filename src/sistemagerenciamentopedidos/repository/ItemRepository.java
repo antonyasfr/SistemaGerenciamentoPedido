@@ -67,7 +67,7 @@ public class ItemRepository {
        
         for (Item i : itens) {
             if (i.getCod_pedido() == item.getCod_pedido() && i.getSeq_item() == item.getSeq_item()) {
-                throw new IOException("Erro: Já existe um item com a sequência " + item.getSeq_item() + " para o pedido " + item.getCod_pedido());
+                throw new IOException("Erro: Ja existe um item com a sequencia " + item.getSeq_item() + " para o pedido " + item.getCod_pedido());
             }
         }
         itens.add(item);
@@ -89,7 +89,7 @@ public class ItemRepository {
         }
 
         if (!encontrado) {
-            throw new IOException("Item não encontrado para alteração.");
+            throw new IOException("Item nao encontrado para alteracao.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(itens), ARQUIVO_ITENS);

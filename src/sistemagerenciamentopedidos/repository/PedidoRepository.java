@@ -70,7 +70,7 @@ public class PedidoRepository {
         List<Pedido> pedidos = listar();
         for (Pedido p : pedidos) {
             if (p.getCod_pedido() == pedido.getCod_pedido()) {
-                throw new IOException("Erro: Já existe um pedido com o Código " + pedido.getCod_pedido());
+                throw new IOException("Erro: Ja existe um pedido com o Codigo " + pedido.getCod_pedido());
             }
         }
         pedidos.add(pedido);
@@ -94,7 +94,7 @@ public class PedidoRepository {
         }
 
         if (!encontrado) {
-            throw new IOException("Pedido com Código " + pedido.getCod_pedido() + " não encontrado.");
+            throw new IOException("Pedido com Codigo " + pedido.getCod_pedido() + " nao encontrado.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(pedidos), ARQUIVO_PEDIDOS);
@@ -105,7 +105,7 @@ public class PedidoRepository {
         boolean removido = pedidos.removeIf(p -> p.getCod_pedido() == cod);
 
         if (!removido) {
-            throw new IOException("Pedido com Código " + cod + " não encontrado para exclusão.");
+            throw new IOException("Pedido com Código " + cod + " nao encontrado para exclusao.");
         }
 
         ArquivoUtil.salvarDados(listaParaCsv(pedidos), ARQUIVO_PEDIDOS);
