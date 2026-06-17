@@ -4,6 +4,12 @@
  */
 package sistemagerenciamentopedidos.view;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import sistemagerenciamentopedidos.controller.ClienteController;
+import sistemagerenciamentopedidos.model.Cliente;
+
 /**
  *
  * @author ueg
